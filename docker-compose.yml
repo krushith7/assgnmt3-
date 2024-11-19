@@ -1,0 +1,13 @@
+services:
+  webserver:
+    build: ./webserver
+    ports:
+      - "5000:5000"
+         
+  loadbalancer:
+    build: ./loadbalancer
+    ports:
+      - "80:80"
+    depends_on:
+      - webserver
+
